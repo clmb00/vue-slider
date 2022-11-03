@@ -60,9 +60,6 @@ body{
   cursor: pointer;
   height: 100%;
   width: calc(100% / 5);
-}
-
-img.not-active{
   filter: brightness(60%);
 }
 

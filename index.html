@@ -13,10 +13,14 @@
   <div id="app">
     <div class="carousel">
       <div class="carousel-top">
-        <!-- big image -->
+        <img :src="states[counter].image" alt="states[counter].name">
+        <div class="title-descr">
+          <h2>{{states[counter].name}}</h2>
+          <p>{{states[counter].descr}}</p>
+        </div>
       </div>
       <div class="carousel-bottom">
-        <!-- small images -->
+        <img v-for="state in states" :src="state.image" :alt="state.name">
         <button class="direction" id="btn-left" type="button">
           <i class="fa-solid fa-angles-left"></i>
         </button>
