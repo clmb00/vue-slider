@@ -13,18 +13,18 @@
   <div id="app">
     <div class="carousel">
       <div class="carousel-top">
-        <img :src="states[counter].image" alt="states[counter].name">
+        <img :src="states[counter].image" :alt="states[counter].name">
         <div class="title-descr">
           <h2>{{states[counter].name}}</h2>
           <p>{{states[counter].descr}}</p>
         </div>
       </div>
       <div class="carousel-bottom">
-        <img v-for="state in states" :src="state.image" :alt="state.name">
-        <button class="direction" id="btn-left" type="button">
+        <img v-for="(state, index) in states" :src="state.image" :alt="state.name" @click="counter = index" :class="{'active' : counter == index}">
+        <button class="direction" id="btn-left" type="button" @click="nextImg(false)">
           <i class="fa-solid fa-angles-left"></i>
         </button>
-        <button class="direction" id="btn-right" type="button">
+        <button class="direction" id="btn-right" type="button" @click="nextImg(true)">
           <i class="fa-solid fa-angles-right"></i>
         </button>
       </div>

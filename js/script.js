@@ -28,5 +28,15 @@ createApp({
       ],
       counter: 0
     }
+  },
+
+  methods:{
+    nextImg(right){
+      if(right){
+        if(++this.counter == this.states.length) this.counter = 0;
+      } else {
+        if(--this.counter == -1) this.counter = this.states.length -1;
+      }
+    }
   }
 }).mount('#app')
