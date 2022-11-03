@@ -43,7 +43,7 @@ createApp({
     autoPlay(){
       interval = setInterval(()=>{
         this.nextImg(this.direction);
-      },1000);
+      },3000);
     },
     stopAutoPlay(){
       clearInterval(interval)
