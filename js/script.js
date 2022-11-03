@@ -37,6 +37,15 @@ createApp({
       } else {
         if(--this.counter == -1) this.counter = this.states.length -1;
       }
+    },
+    autoPlay(){
+      setInterval(()=>{
+        this.nextImg(true);
+      },1000);
     }
+  },
+
+  mounted(){
+    this.autoPlay();
   }
 }).mount('#app')
