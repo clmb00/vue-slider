@@ -27,7 +27,8 @@ createApp({
         }
       ],
       counter: 0,
-      interval: null
+      interval: null,
+      direction: true
     }
   },
 
@@ -41,8 +42,8 @@ createApp({
     },
     autoPlay(){
       interval = setInterval(()=>{
-        this.nextImg(true);
-      },3000);
+        this.nextImg(this.direction);
+      },1000);
     },
     stopAutoPlay(){
       clearInterval(interval)
