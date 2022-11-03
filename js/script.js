@@ -26,7 +26,8 @@ createApp({
           image: 'https://cdn.sanity.io/images/24oxpx4s/prod/ed09eff0362396772ad50ec3bfb728d332eb1c30-3200x2125.jpg?w=1600&h=1063&fit=crop'    
         }
       ],
-      counter: 0
+      counter: 0,
+      interval: null
     }
   },
 
@@ -39,9 +40,12 @@ createApp({
       }
     },
     autoPlay(){
-      setInterval(()=>{
+      interval = setInterval(()=>{
         this.nextImg(true);
-      },1000);
+      },3000);
+    },
+    stopAutoPlay(){
+      clearInterval(interval)
     }
   },
 
